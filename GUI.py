@@ -2,7 +2,6 @@ from tkinter import *
 import os
 from tkinter import filedialog
 import tkinter.scrolledtext as tkst
-from PIL import ImageTk,Image
 
 
 class MainPage:
