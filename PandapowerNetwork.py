@@ -68,6 +68,7 @@ class PandapowerNetwork:
                     ec_bus = pp.get_element_index(self.net, 'bus', bb_top.name)
             pp.create_load(self.net, ec_bus, ec_top.p, ec_top.q, name=ec_top.name)
 
+        # Comment this part if the extended XML files are used
         # Create switches
         for br_top in breaker_list_topology:
             for bb_top in busbar_section_list_topology:
@@ -81,7 +82,6 @@ class PandapowerNetwork:
                         if tr_top.id_ == br_top.element_id:
                             br_el = pp.get_element_index(self.net, 'trafo', tr_top.name)
                             pp.create_switch(self.net, br_bb, br_el, et='t', name=br_top.name)
-
         print('Pandapower network has been created')
 
     def plot_network(self, plot_filename):

@@ -543,4 +543,6 @@ class GridElements:
 
         self.disconnectable_list = self.power_transformer_list + self.ac_line_segment_list
 
+        self.disconnected_elements = []
+
         print('Network elements have been created')

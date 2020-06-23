@@ -111,8 +111,8 @@ class MainPage:
         self.internal_data_window_button.place(relheight=0.05, relwidth=1, relx=0.0, rely=0.4)
 
     def generate_topology(self):
-        if any(self.disconnected_elements):
-            for de in self.disconnected_elements:
+        if any(self.grid_elements.disconnected_elements):
+            for de in self.grid_elements.disconnected_elements:
                 for ce in self.grid_elements.conducting_equipment_list:
                     if de == ce.name:
                         for i in range(len(self.grid_elements.breaker_list)):
@@ -174,8 +174,6 @@ class MainPage:
         self.details_label = Label(self.indata_frame, text="Component details", font=("Arial", "10"),
                                    borderwidth=1, relief="solid")
         self.details_label.place(relheight=0.1, relwidth=1, relx=0.0, rely=0.0)
-
-        self.disconnected_elements = []
 
         self.busbar_button = Button(self.indata_frame, text="Busbar",
                                      command=self.show_details_busbar, font=("Arial", "10"))
@@ -247,7 +245,7 @@ class MainPage:
         self.config_listbox.insert(END, anchor)
 
     def config_confirm(self):
-        self.disconnected_elements = list(self.config_selected_listbox.get(0, ANCHOR))
+        self.grid_elements.disconnected_elements = list(self.config_selected_listbox.get(0, ANCHOR))
         self.indata_window.destroy()
 
     def add_selected_listbox(self):
