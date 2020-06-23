@@ -7,4 +7,4 @@ This project contains five files:
 * GUI.py: graphical user interface (GUI), generates graphic user interface and all its widgets.
 * Elements.py: contains classes of each element and generate the elements from the parsing results
 * timeseriessim.py: time series simulation, executes the time series simulation of the pandapower network and generates excel file for the simulation results (bus voltages and angles)
-* testnetwork.py: contains a function to create the given pandapower network
+* testnetwork.py: contains a function to create the specified pandapower network
