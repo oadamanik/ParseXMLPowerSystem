@@ -118,6 +118,8 @@ class MainPage:
                         for i in range(len(self.grid_elements.breaker_list)):
                             if ce.id_ == self.grid_elements.breaker_list[i].element_id:
                                 self.grid_elements.breaker_list[i].pos = True
+        else:
+            pass
 
         self.topology.generate_topology(self.grid_elements.conducting_equipment_id_list,
                                         self.grid_elements.terminal_id_list,
@@ -172,6 +174,8 @@ class MainPage:
         self.details_label = Label(self.indata_frame, text="Component details", font=("Arial", "10"),
                                    borderwidth=1, relief="solid")
         self.details_label.place(relheight=0.1, relwidth=1, relx=0.0, rely=0.0)
+
+        self.disconnected_elements = []
 
         self.busbar_button = Button(self.indata_frame, text="Busbar",
                                      command=self.show_details_busbar, font=("Arial", "10"))
@@ -236,8 +240,6 @@ class MainPage:
         self.config_confirm_button = Button(self.indata_frame, text='OK',
                                            command=self.config_confirm)
         self.config_confirm_button.place(relheight=0.15, relwidth=0.2, relx=0.4, rely=0.75)
-        print(self.config_listbox.get(0, END))
-        print(self.config_selected_listbox.get(0, END))
 
     def delete_selected_listbox(self):
         anchor = self.config_selected_listbox.get(ANCHOR)
@@ -246,7 +248,6 @@ class MainPage:
 
     def config_confirm(self):
         self.disconnected_elements = list(self.config_selected_listbox.get(0, ANCHOR))
-        print(self.disconnected_elements)
         self.indata_window.destroy()
 
     def add_selected_listbox(self):

@@ -508,7 +508,7 @@ class GridElements:
                             if te_.ce in self.busbar_section_id_list:
                                 breaker.bus_id = te_.ce
                                 breaker_bus_list.append(te_.ce)
-            print(breaker_bus_list)
+
             # Find the element to where the breaker is connected
             for te in self.terminal_list:
                 # There will be two terminals that fulfill the condition below
@@ -528,11 +528,8 @@ class GridElements:
                         for be in breaker_element_list:
                             if be in (self.ac_line_segment_id_list + self.power_transformer_id_list):
                                 breaker.element_id = be
-            print(breaker.name)
-            print(breaker.element_id)
-            print(breaker.bus_id)
             self.breaker_list.append(breaker)
-        print(len(self.breaker_list))
+
         get_id(self.breaker_id_list, self.breaker_list)
 
         self.conducting_equipment_id_list = self.synchronous_machine_id_list + self.busbar_section_id_list + \
