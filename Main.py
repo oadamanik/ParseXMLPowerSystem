@@ -1,6 +1,5 @@
 """
-Latest modified: 07 May 2020
-for Assignment 1 of EH2745, KTH Royal Institute of Technology
+Assignment 1 of EH2745, KTH Royal Institute of Technology
 Author: oadamanik (Oscar Aristo Damanik)
 """
 
